@@ -43,7 +43,7 @@ Usage: godo [command]
 			
 available commands:
   add [title]         Adds a new todo item
-  clear		          Clears all todo items
+  clear	              Clears all todo items
   list                Lists all current todo items
   toggle [id]         Toggles a todo item as done or not done
   tui                 Starts the TUI
