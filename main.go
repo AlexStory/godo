@@ -29,6 +29,8 @@ func main() {
 		toggleCmd(&todos)
 	case "update":
 		updateCmd(&todos)
+	case "tui":
+		tuiCmd(&todos)
 	default:
 		defaultCmd()
 	}
@@ -41,9 +43,10 @@ Usage: godo [command]
 			
 available commands:
   add [title]         Adds a new todo item
-  clear		        Clears all todo items
+  clear		          Clears all todo items
   list                Lists all current todo items
   toggle [id]         Toggles a todo item as done or not done
+  tui                 Starts the TUI
   update [id] [title] Updates the title of a todo item`)
 }
 
@@ -112,4 +115,8 @@ func updateCmd(todos *Todos) {
 		fmt.Println("Todo not found")
 		os.Exit(1)
 	}
+}
+
+func tuiCmd(todos *Todos) {
+	runTui(*todos)
 }
